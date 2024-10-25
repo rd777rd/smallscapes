@@ -81,7 +81,7 @@
   color:white;
 }
 .dropdown-menu a:hover{
-  color:green;
+  color:#51CD0E;
 }
 /*end of header css*/
 
@@ -153,7 +153,7 @@
     font-size: 18px;
     padding:10px;
     border-radius: 20px;
-    background-color: green;
+    background-color: #51CD0E;
 }
 .r2_link:hover{
     color:white;
@@ -170,7 +170,7 @@
     height:125px;
     padding:5px;
     border-radius: 20px;
-    background-color: green;
+    background-color: #51CD0E;
 }
 .margin5{
     margin-right: 5px;
@@ -235,7 +235,7 @@
 }
 .imgContainer{
     display:block;
-    width:45%;
+    width:50%;
     height:238px;
     padding:10px;
 }
@@ -247,8 +247,8 @@
 }
 .aboutTextcontainer{
     display: block;
-    width:45%;
-    background-color: green;
+    width:50%;
+    background-color: #51CD0E;
     border-radius: 20px;
 }
 .aboutTextcontainer_heading{
@@ -270,7 +270,7 @@
     display: block;
     width:90%;
     margin:10px auto;
-    background-color: green;
+    background-color: #51CD0E;
     padding:10px;
     border-radius: 20px;
 
@@ -311,7 +311,7 @@
     text-decoration: none;
 }
 .ar3_text:hover{
-    color:green;
+    color:#51CD0E;
 }
 /* end of about css */
 /* project page css*/
@@ -376,7 +376,7 @@
     width:50%;
     font-weight: bold;
     font-size: 18px;
-    background-color: green;
+    background-color: #51CD0E;
     color:black;
     margin:10px auto;
     padding:10px;
@@ -399,7 +399,7 @@
     margin:auto;
     padding:10px;
     border-radius: 20px;
-    background-color: green;
+    background-color: #51CD0E;
 }
 .footer_header{
     text-align: center;

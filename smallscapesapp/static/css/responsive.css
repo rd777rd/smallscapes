@@ -85,10 +85,10 @@
     }
     .imgContainer{
         width:40%;
-        height:200px;
+        height:auto;
     }
     .project-img{
-        height:200px;
+        height:auto;
     }
     .aboutTextcontainer{
         width:40%;

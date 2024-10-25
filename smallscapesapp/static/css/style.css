@@ -235,7 +235,7 @@
 }
 .imgContainer{
     display:block;
-    width:50%;
+    width:45%;
     height:238px;
     padding:10px;
 }
@@ -247,7 +247,7 @@
 }
 .aboutTextcontainer{
     display: block;
-    width:50%;
+    width:45%;
     background-color: green;
     border-radius: 20px;
 }

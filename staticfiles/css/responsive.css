@@ -84,8 +84,7 @@
         font-size: 24px;
     }
     .imgContainer{
-        width:40%;
-        padding:0;
+        width:48%;
         height:119px;
     }
     .project-img{
@@ -95,7 +94,7 @@
         
     }
     .aboutTextcontainer{
-        width:40%;
+        width:48%;
     }
     .aboutTextcontainer_heading{
         font-size: 20px;

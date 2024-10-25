@@ -85,11 +85,11 @@
     }
     .imgContainer{
         width:45%;
-        max-height:150px;
+        max-height:125px;
     }
     .project-img{
-        max-height:150px;
-        height:auto;
+        max-height:125px;
+        width:100%;
         
     }
     .aboutTextcontainer{

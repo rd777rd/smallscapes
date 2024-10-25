@@ -84,11 +84,12 @@
         font-size: 24px;
     }
     .imgContainer{
-        width:45%;
-        max-height:125px;
+        width:40%;
+        padding:0;
+        height:100px;
     }
     .project-img{
-        max-height:125px;
+        height:100px;
         width:100%;
         
     }

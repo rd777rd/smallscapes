@@ -85,9 +85,10 @@
     }
     .imgContainer{
         width:45%;
-        height:auto;
+        max-height:150px;
     }
     .project-img{
+        max-height:150px;
         height:auto;
     }
     .aboutTextcontainer{

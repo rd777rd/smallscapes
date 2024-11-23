@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>SmallScapes</title>
+    <meta name="description" content="A brief description" />
+    <meta
+      name="author"
+      content="Based in Indiana, landscaping company"
+    />
+
+    <!-- Load favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'img/favicon.ico' %}"
+    />
+
+    <!-- Include your CSS files here -->
+    <link
+      rel="stylesheet"
+      as="style"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+      onload="this.rel = 'stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      as="style"
+      href="{% static 'css/responsive.css' %}"
+      onload="this.rel = 'stylesheet'"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Add include tag -->
+    {% include 'partials/_header.html' %}
+    
+
+    <main>
+       <!-- Begin block content --> 
+        {% block content %}
+        
+        {% endblock %}
+ 
+      <!-- End block content --> 
+    </main>
+
+    {% include 'partials/_footer.html' %}
+  </body>
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+    
+    toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList= isOpen
+        ?'fa-solid fa-x'
+        :'fa-solid fa-bars'
+    }
+    var x = 0;
+    const toggleimage1 = document.getElementById('img1')
+    toggleimage1.onclick = function changImage1(){
+      if(x==0){
+        toggleimage1.src="{% static 'img/img1a.JPG' %}";
+        x=1
+      }
+      else{
+        toggleimage1.src="{% static 'img/img1.JPG' %}";
+        x=0
+      }
+    }
+      var x = 0;
+    const toggleimage2 = document.getElementById('img2')
+    toggleimage2.onclick = function changImage2(){
+      if(x==0){
+        toggleimage2.src="{% static 'img/img2a.PNG' %}";
+        x=1
+      }
+      else{
+        toggleimage2.src="{% static 'img/img2.JPG' %}";
+        x=0
+      }
+        
+    }
+    var x = 0;
+    const toggleimage3 = document.getElementById('img3')
+    toggleimage3.onclick = function changImage3(){
+      if(x==0){
+        toggleimage3.src="{% static 'img/img3a.JPG' %}";
+        x=1
+      }
+      else{
+        toggleimage3.src="{% static 'img/img3.JPG' %}";
+        x=0
+      }
+        
+    }
+    var x = 0;
+    const toggleimage4 = document.getElementById('img4')
+    toggleimage4.onclick = function changImage4(){
+      if(x==0){
+        toggleimage4.src="{% static 'img/img4a.JPG' %}";
+        x=1
+      }
+      else{
+        toggleimage4.src="{% static 'img/img4.JPG' %}";
+        x=0
+      }
+        
+    }
+    var x = 0;
+    const toggleimage5 = document.getElementById('img5')
+    toggleimage5.onclick = function changImage5(){
+      if(x==0){
+
+        toggleimage5.src="{% static 'img/img5a.JPEG' %}";
+
+        toggleimage5.src="{% static 'img/img5a.JPEG' %}";
+
+        x=1
+      }
+      else{
+        toggleimage5.src="{% static 'img/img5.PNG' %}";
+        x=0
+      }
+        
+    }
+    var x = 0;
+    const toggleimage6 = document.getElementById('img6')
+    toggleimage6.onclick = function changImage6(){
+      if(x==0){
+        toggleimage6.src="{% static 'img/img6a.JPG' %}";
+        x=1
+      }
+      else{
+        toggleimage6.src="{% static 'img/img6.JPG' %}";
+        x=0
+      }
+        
+    }
+    var x = 0;
+    const toggleimage7 = document.getElementById('img7')
+    toggleimage7.onclick = function changImage7(){
+      if(x==0){
+        toggleimage7.src="{% static 'img/img7a.JPG' %}";
+        x=1
+      }
+      else{
+        toggleimage7.src="{% static 'img/img7.JPG' %}";
+        x=0
+      }
+        
+    }
+    var x = 0;
+    const toggleimage8 = document.getElementById('img8')
+    toggleimage8.onclick = function changImage8(){
+      if(x==0){
+        toggleimage8.src="{% static 'img/img8a.JPG' %}";
+        x=1
+      }
+      else{
+        toggleimage8.src="{% static 'img/img8.JPG' %}";
+        x=0
+      }
+        
+    }
+    
+</script>
+</html>

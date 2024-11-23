@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <!-- Begin block content --> 
+ {% block content %}
+ <div class="row1">
+    <div class="r1_textContainer">
+        <h1 class="r1_heading">SmallScapes LLC</h1>
+        <p class="r1_text">SmallScapes is an Indiana based company offering a variety of landscaping/construction services</p>
+    </div>
+ </div>
+ <div class="row2">
+    <h2 class="r2_heading">Projects</h2>
+    <div class="r2_imagesContainer">
+        <img class="project_img" src="{% static 'img/img1.JPG' %}" />
+        <img class="project_img" src="{% static 'img/img2.JPG' %}" />
+        <img class="project_img" src="{% static 'img/img3.JPG' %}" />
+    </div>
+    <a class="r2_link" href="{% url 'projects' %}">View More</a> 
+ </div>
+ <div class="row3">
+    <div class="r3_textContainer margin5">
+        <h2 class="r3_heading">Services</h2>
+        <ul class="r3_list">
+            <li class="r3_listItem">Small patios and seated walls </li>
+            <li class="r3_listItem">Flower beds and edging</li>
+        </ul>
+
+    </div>
+    <div class="r3_textContainer">
+        <h2 class="r3_heading">Consultation</h2>
+        <p class="r3_text">Call or email us to get an estimate!</p>
+        <div class="r3_linkContainer">
+            <a class="r3_link" href="tel:+13174507948">Call</a>
+            <a class="r3_link" href="mailto:garfieldnecole@gmail.com">Email</a>
+        </div>
+    </div>
+ </div>
+ {% endblock %}
+
+<!-- End block content -->
+
+</body>
+</html>

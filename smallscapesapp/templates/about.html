@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<!-- Add heading code -->
+
+<!-- Add paragraph code -->
+ {% block content %}
+ <h2 class="about_heading">About SmallScapes</h2>
+ <div class="row ar1">
+    <div class="imgContainter">
+        <img class="project-img" src="{% static 'img/img2.JPG' %}" />
+    </div>
+    <div class ="aboutTextcontainer">
+        <h2 class="aboutTextcontainer_heading">About</h2>
+         <!--<p>{{content.about}}</p>-->
+        <p class="aboutTextcontainer_text">SmallScapes is a landscaping / construction company that....(what you do) based in Indiana</p>
+    </div>
+ </div>
+ <div class="ar2">
+    <div class="ar2_textContainer">
+    <h2 class="ar2_heading">Mission Statement</h2>
+    <p class="ar2_text">We Strive to...(e.g. offer landscaping services that creates a better lifestyle for the outside of our customers home.)</p>
+ </div>
+ <div class="ar3">
+    <div class="ar3_textContainer">
+        <a class="ar3_text" href="tel:+123456789">CLICK TO CALL NOW</a>
+    </div>
+ </div>
+ {% endblock %}
+
+<!-- Add image code -->
+
+</body>
+</html>

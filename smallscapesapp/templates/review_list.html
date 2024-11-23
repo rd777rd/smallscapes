@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+
+{% block content %}
+    <h2 class="reviewsHeading">Reviews</h2>
+    <ul class="reviewList">
+        {% for review in reviews %}
+            <li class="reviewDetails">
+                <div class="reviewCustomerDetail">
+                    <div class="reviewCustomerContainer">
+                        <p class="reviewCustomer">{{ review.name }}</p>
+                    </div>
+                    <div class="reviewRatingContainer">
+                        <p class="reviewRating">Rating: ({{ review.rating }}/5)</p>
+                    </div>
+                </div>
+                <div class="reviewcommentContainer">
+                    <p class="reviewcomment">Review: {{ review.comment }}</p> 
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="reviewLinkContainer">
+        <a class="reviewLink" href="{% url 'leave_review' %}">CLICK HERE TO LEAVE A REVIEW</a>   
+    </div>
+    
+{% endblock %}
+
+</body>
+</html>

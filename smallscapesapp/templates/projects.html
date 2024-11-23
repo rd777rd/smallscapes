@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <!-- Begin block content --> 
+{% block content %}
+<h2 class="project_heading">Work Projects</h2>
+<p class="project_text">Click to view before and after</p>
+<div class="row r1">
+    <img class="projects-img" id="img1" src="{% static 'img/img1.JPG' %}" onclick="changImage1" />
+        <img class="projects-img" id="img2" src="{% static 'img/img2.JPG'  %}"  onclick="changImage2" />
+        <img class="projects-img" id="img3" src="{% static 'img/img3.JPG' %}" onclick="changImage3" />
+</div>
+<div class="row r2">
+    <div class="sec1">
+        <img class="projects-img" id="img4" src="{% static 'img/img4.JPG' %}" onclick="changImage4" />
+
+    </div>
+    <div class="sec2">
+        <img class="dualimg" id="img5" src="{% static 'img/img5.PNG' %}" onclick="changImage5">
+        <img class="dualimg" id="img6" src="{% static 'img/img6.JPG' %}" onclick="changImage6">
+
+    </div>
+    <div class="sec3">
+        <img class="projects-img" id="img7" src="{% static 'img/img7.JPG' %}" onclick="changImage7" />
+    </div>
+</div>
+<div class="r3">
+    <img class="projects-img-last" id="img8" src="{% static 'img/img8.JPG' %}" onclick="changImage8"/>
+
+</div>
+<a class="projectLink" href="{% url 'projects' %}">View More</a>
+{% endblock %}
+
+<!-- End block content -->
+</body>
+</html>

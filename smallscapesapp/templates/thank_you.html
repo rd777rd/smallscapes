@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="trow1">
+    <div class="submittedTextContainer">
+        <p class="submittedText containerText">Review Submitted!<br/>Thank You!</p>
+    </div>
+</div>
+<div class="trow2">
+    <div class="seeReviewsContainer">
+        <a class="containerLink1" href="{% url 'review_list' %}">VIEW REVIEWS</a>
+    </div>
+
+</div>
+<div class="trow3">
+        <div class="homeLinkContainer">
+            <a class="containerLink1" href="{% url 'home' %}">HOME</a>
+
+        </div>
+        <div class="projectLinkContainer">
+            <a class="containerLink1" href="{% url 'projects' %}">PROJECTS</a>
+
+        </div>
+</div>
+
+{% endblock %}

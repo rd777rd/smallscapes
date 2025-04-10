@@ -1,1 +1,1 @@
-Website built for small company using python. Visit www. to access it.
+Website built for small company using python. Visit (https://smallscapes.onrender.com) to access it.

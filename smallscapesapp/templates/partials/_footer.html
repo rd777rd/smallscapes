@@ -1,8 +1,128 @@
 {% load static %}
-<footer class="footerSection">
-    <h1 class="footer_header">Contact Info</h1>
-    <div class="footerContainer">
-      <p class="footer_text">Phone Number: <a class="phoneLink" href="tel:+317-450-7948">317-450-7948</a></p>
-      <p class="footer_text">Email: <a class="emailLink" href="mailto:garfieldnecole@gmail.com">garfieldnecole@gmail.com</a></p>
+<footer class="bg-zinc-950 text-zinc-400 font-sans pt-16 pb-8 border-t border-zinc-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <!-- Brand Profile -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-full overflow-hidden border border-brand-500 shadow-inner">
+            <img 
+              src="{% static 'img/logo.jpg' %}" 
+              alt="SmallScapes Brand Logo" 
+              class="object-cover w-full h-full"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <span class="font-display font-bold text-white text-lg tracking-tight">SmallScapes LLC</span>
+        </div>
+        <p class="text-sm leading-relaxed text-zinc-400">
+          Crafting durable, luxurious outdoor spaces with precise masonry, certified interlocking paver installations, and high-quality landscaping architectural designs across Indiana.
+        </p>
+        <div class="flex space-x-4 pt-2">
+          <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 hover:bg-brand-600 text-white flex items-center justify-center text-sm transition-all duration-300" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 hover:bg-brand-600 text-white flex items-center justify-center text-sm transition-all duration-300" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-zinc-900 hover:bg-brand-600 text-white flex items-center justify-center text-sm transition-all duration-300" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
+        </div>
+      </div>
+
+      <!-- Landscaping & Paver Services -->
+      <div>
+        <h3 class="font-display font-semibold text-white tracking-wide uppercase text-xs mb-6 border-l-2 border-brand-500 pl-3">
+          Our Specializations
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="{% url 'projects' %}" class="hover:text-white transition-colors duration-200 flex items-center">
+              <i class="fa-solid fa-chevron-right text-[10px] text-brand-500 mr-2"></i> Custom Interlocking Paver Patios
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'projects' %}" class="hover:text-white transition-colors duration-200 flex items-center">
+              <i class="fa-solid fa-chevron-right text-[10px] text-brand-500 mr-2"></i> Flagstone Walking Paths
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'projects' %}" class="hover:text-white transition-colors duration-200 flex items-center">
+              <i class="fa-solid fa-chevron-right text-[10px] text-brand-500 mr-2"></i> Stone Retaining & Seating Walls
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'projects' %}" class="hover:text-white transition-colors duration-200 flex items-center">
+              <i class="fa-solid fa-chevron-right text-[10px] text-brand-500 mr-2"></i> Premium Sod & Site Grading
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'projects' %}" class="hover:text-white transition-colors duration-200 flex items-center">
+              <i class="fa-solid fa-chevron-right text-[10px] text-brand-500 mr-2"></i> Garden Beds, Edging & Cedar Mulch
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Service Locations -->
+      <div>
+        <h3 class="font-display font-semibold text-white tracking-wide uppercase text-xs mb-6 border-l-2 border-brand-500 pl-3">
+          Indiana Service Area
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center">
+            <i class="fa-solid fa-location-dot text-brand-500 mr-2"></i> Indianapolis, IN
+          </li>
+          <li class="flex items-center">
+            <i class="fa-solid fa-location-dot text-brand-500 mr-2"></i> Carmel & Zionsville, IN
+          </li>
+          <li class="flex items-center">
+            <i class="fa-solid fa-location-dot text-brand-500 mr-2"></i> Fishers, Noblesville & Geist, IN
+          </li>
+          <li class="flex items-center">
+            <i class="fa-solid fa-location-dot text-brand-500 mr-2"></i> Bloomington & Brown County, IN
+          </li>
+          <li class="flex items-center">
+            <i class="fa-solid fa-circle-info text-zinc-600 mr-2 text-xs"></i> Licensed, Insured & Bonded
+          </li>
+        </ul>
+      </div>
+
+      <!-- Direct Contact & Hours -->
+      <div>
+        <h3 class="font-display font-semibold text-white tracking-wide uppercase text-xs mb-6 border-l-2 border-brand-500 pl-3">
+          Get Free Estimate
+        </h3>
+        <div class="space-y-4">
+          <div class="bg-zinc-900 rounded-2xl p-4 border border-zinc-850">
+            <p class="text-xs text-zinc-500 uppercase tracking-wider mb-1 font-semibold">Immediate Phone Lines</p>
+            <a href="tel:+13174507948" class="text-base font-bold text-white hover:text-brand-400 transition-colors flex items-center">
+              <i class="fa-solid fa-phone text-brand-500 mr-2 text-sm"></i> 317-450-7948
+            </a>
+          </div>
+
+          <div class="bg-zinc-900 rounded-2xl p-4 border border-zinc-850">
+            <p class="text-xs text-zinc-500 uppercase tracking-wider mb-1 font-semibold">Estimating Office Email</p>
+            <a href="mailto:garfieldnecole@gmail.com" class="text-sm font-semibold text-white hover:text-brand-400 transition-colors break-words flex items-center">
+              <i class="fa-solid fa-envelope text-brand-500 mr-2"></i> garfieldnecole@gmail.com
+            </a>
+          </div>
+          
+          <div class="text-xs text-zinc-500 space-y-1">
+            <p><i class="fa-solid fa-clock mr-1 text-zinc-600"></i> Office Hours: Mon - Sat: 8:00 AM - 6:00 PM</p>
+            <p><i class="fa-solid fa-calendar mr-1 text-zinc-600"></i> Sunday: Closed for family</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Bottom Copybar -->
+    <div class="pt-8 mt-12 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-600">
+      <p>&copy; 2026 SmallScapes LLC. All rights reserved. Professional Indiana Hardscapes & Landscape Architecture.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-brand-400 transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-brand-400 transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-brand-400 transition-colors flex items-center" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          Back to Top <i class="fa-solid fa-arrow-up ml-1 text-[10px]"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>

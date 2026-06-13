@@ -1,19 +1,93 @@
 {% load static %}
-<div class="header">
-  <header>
-    <img class ="header-logo" src="{% static 'img/logo.JPG' %}" />
-    <div class="toggle_btn">
-      <i class="fa-solid fa-bars"></i>
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200/50 shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="{% url 'home' %}" class="flex items-center space-x-3 group">
+        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-500 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <img 
+            src="{% static 'img/logo.jpg' %}" 
+            alt="SmallScapes Logo" 
+            class="object-cover w-full h-full"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-lg tracking-tight text-zinc-900 group-hover:text-brand-600 transition-colors duration-300">
+            SmallScapes
+          </span>
+          <span class="text-[10px] font-semibold text-zinc-400 uppercase tracking-widest leading-none">
+            Hardscaping & Pavers
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="{% url 'home' %}" class="relative py-2 font-display font-medium text-sm text-zinc-600 hover:text-brand-700 transition-colors duration-300 group">
+          Home
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-500 origin-bottom-right scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left transition-transform duration-300"></span>
+        </a>
+        <a href="{% url 'about' %}" class="relative py-2 font-display font-medium text-sm text-zinc-600 hover:text-brand-700 transition-colors duration-300 group">
+          About
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-500 origin-bottom-right scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left transition-transform duration-300"></span>
+        </a>
+        <a href="{% url 'projects' %}" class="relative py-2 font-display font-medium text-sm text-zinc-600 hover:text-brand-700 transition-colors duration-300 group">
+          Projects
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-500 origin-bottom-right scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left transition-transform duration-300"></span>
+        </a>
+        <a href="{% url 'review_list' %}" class="relative py-2 font-display font-medium text-sm text-zinc-600 hover:text-brand-700 transition-colors duration-300 group">
+          Reviews
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-500 origin-bottom-right scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left transition-transform duration-300"></span>
+        </a>
+      </nav>
+
+      <!-- CTA Consultation Button -->
+      <div class="hidden md:block">
+        <a href="tel:+13174507948" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full shadow-md shadow-brand-600/10 hover:shadow-brand-600/20 hover:-translate-y-0.5 transition-all duration-300">
+          <i class="fa-solid fa-phone-volume animate-pulse"></i>
+          <span>Click to Call Estimator</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="md:hidden">
+        <button 
+          id="mobile-menu-btn" 
+          type="button" 
+          class="inline-flex items-center justify-center p-2 rounded-lg text-zinc-500 hover:text-brand-600 hover:bg-zinc-100 focus:outline-none transition-all duration-300"
+          aria-expanded="false"
+        >
+          <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
     </div>
-    <div class="dropdownContainer">
-      <div class="dropdown-menu">
-        <ul class="dropwdownlist">
-            <li class="dropdownitem"><a class="dropdownlink" href="{% url 'home' %}">HOME</a></li>
-            <li  class="dropdownitem"><a class="dropdownlink" href="{% url 'about' %}">ABOUT</a></li>
-            <li  class="dropdownitem"><a class="dropdownlink" href="{% url 'projects' %}">PROJECTS</a></li>
-            <li  class="dropdownitem"><a class="dropdownlink" href="{% url 'review_list' %}">REVIEWS</a></li>
-        </ul>
+  </div>
+
+  <!-- Mobile Dropdown Drawer -->
+  <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-zinc-200 shadow-xl transition-all duration-300 ease-in-out">
+    <div class="px-4 pt-2 pb-6 space-y-2">
+      <a href="{% url 'home' %}" class="block px-4 py-3 rounded-xl font-display font-semibold text-[15px] text-zinc-805 hover:bg-zinc-50 hover:text-brand-600 transition-all">
+        <i class="fa-solid fa-house w-6 text-zinc-400"></i> Home
+      </a>
+      <a href="{% url 'about' %}" class="block px-4 py-3 rounded-xl font-display font-semibold text-[15px] text-zinc-805 hover:bg-zinc-50 hover:text-brand-600 transition-all">
+        <i class="fa-solid fa-circle-info w-6 text-zinc-400"></i> About SmallScapes
+      </a>
+      <a href="{% url 'projects' %}" class="block px-4 py-3 rounded-xl font-display font-semibold text-[15px] text-zinc-805 hover:bg-zinc-50 hover:text-brand-600 transition-all">
+        <i class="fa-solid fa-hammer w-6 text-zinc-400"></i> Our Work Projects
+      </a>
+      <a href="{% url 'review_list' %}" class="block px-4 py-3 rounded-xl font-display font-semibold text-[15px] text-zinc-805 hover:bg-zinc-50 hover:text-brand-600 transition-all">
+        <i class="fa-solid fa-star w-6 text-zinc-400"></i> Read Client Reviews
+      </a>
+      
+      <div class="pt-4 px-4">
+        <a href="tel:+13174507948" class="flex items-center justify-center space-x-2 w-full bg-brand-600 hover:bg-brand-700 text-white font-display font-bold py-3.5 rounded-full shadow-lg transition-all text-center">
+          <i class="fa-solid fa-phone"></i>
+          <span>CALL AT (317) 450-7948</span>
+        </a>
+      </div>
     </div>
-      </div> 
-  </header>
-</div>
+  </div>
+</header>

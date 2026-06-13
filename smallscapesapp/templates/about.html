@@ -1,42 +1,172 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-</head>
-<body>
-<!-- Add heading code -->
 
-<!-- Add paragraph code -->
- {% block content %}
- <h2 class="about_heading">About SmallScapes</h2>
- <div class="row ar1">
-    <div class="imgContainter">
-        <img class="project-img" src="{% static 'img/img2.JPG' %}" />
-    </div>
-    <div class ="aboutTextcontainer">
-        <h2 class="aboutTextcontainer_heading">About</h2>
-         <!--<p>{{content.about}}</p>-->
-        <p class="aboutTextcontainer_text">SmallScapes is a landscaping / construction company based in Indiana. We specialize in hardscaping outdoor spaces.</p>
-    </div>
- </div>
- <div class="ar2">
-    <div class="ar2_textContainer">
-    <h2 class="ar2_heading">Mission Statement</h2>
-    <p class="ar2_text">We Strive to provide valuable and comfortable outdoor spaces for all of our clients.</p>
- </div>
- <div class="ar3">
-    <div class="ar3_textContainer">
-        <a class="ar3_text" href="tel:+123456789">CLICK TO CALL NOW</a>
-    </div>
- </div>
- {% endblock %}
+{% block title %}About SmallScapes | Elite Indiana Landscaping & Stone Craftsmanship{% endblock %}
 
-<!-- Add image code -->
+{% block content %}
+<!-- Page Title Frame -->
+<section class="bg-gradient-to-l from-zinc-950 via-zinc-900 to-zinc-950 text-white py-16 sm:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 z-0">
+    <div class="absolute -top-10 -right-10 w-96 h-96 bg-brand-500 rounded-full blur-[100px]"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+    <span class="text-xs uppercase font-bold tracking-widest text-brand-400"><i class="fa-solid fa-circle-question mr-1"></i> Who We Are</span>
+    <h1 class="font-display font-black text-4xl sm:text-5xl leading-tight">About SmallScapes</h1>
+    <p class="text-zinc-400 font-light max-w-xl mx-auto text-sm sm:text-base">
+      High-end residential hardscapes, durable stone brick pathways, and robust landscaping adjustments backed by Indiana values.
+    </p>
+  </div>
+</section>
 
-</body>
-</html>
+<!-- Company History & Core Narrative Section (Matches ar1 structure) -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Big Decorative Project Image (Matches original's imgContainer with img2.JPG) -->
+      <div class="lg:col-span-5 relative group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-brand-500 to-teal-500 rounded-3xl opacity-10 blur-xl group-hover:opacity-20 transition-all duration-500"></div>
+        <div class="relative rounded-3xl overflow-hidden border border-zinc-200 bg-zinc-100 aspect-[3/4] shadow-md hover:shadow-xl transition-all duration-300">
+          <img 
+            src="https://i.ibb.co/N2NmMJyS/img1.jpg" 
+            alt="SmallScapes Paver Stone Design Studio" 
+            class="object-cover w-full h-full scale-[1.01] hover:scale-105 transition-transform duration-700"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <!-- Decorative over-badge -->
+        <div class="absolute -bottom-6 -right-6 bg-brand-900 border border-brand-800 text-zinc-100 p-6 rounded-2xl hidden sm:block max-w-[200px] shadow-lg">
+          <p class="font-display font-bold text-lg text-white">Indiana Bound</p>
+          <p class="text-zinc-400 text-xs mt-1">Providing dedicated hardscaping across central Indiana counties.</p>
+        </div>
+      </div>
+
+      <!-- Historical Narrative (Matches original's aboutTextcontainer) -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center space-x-2 text-brand-600 font-bold text-xs uppercase tracking-wider">
+          <i class="fa-solid fa-shield-heart"></i>
+          <span>Our Story & Philosophy</span>
+        </div>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-zinc-900 tracking-tight leading-tight">
+          Crafting Long-Lasting Masonry Foundations
+        </h2>
+        
+        <div class="text-zinc-650 space-y-5 leading-relaxed text-[15px]">
+          <p>
+            SmallScapes is a highly committed landscaping and specialized hardscape construction company based in Indiana. Founded on a simple mission—to build structural beauty and restore failing yards—we have grown into a premier provider of residential stone-masonry services.
+          </p>
+          <p>
+            Unlike general lawn mowers, our true expertise lies in the physical geometry of hardscaping: <strong>brick paver laying</strong>. We pride ourselves on the meticulous, non-visible engineering that makes hardscapes permanent. Every patio and garden walkway we build is configured with a robust gravel subgrade, dense bedding sand, concrete edge restrains, and genuine joint locking polymer sand.
+          </p>
+          <p>
+            This ensures that your pavers stay absolutely flat, perfectly interlocked, and free of weeds, defying Indiana's aggressive frost, heavy clay soils, and seasonal humidity cycle after cycle.
+          </p>
+        </div>
+
+        <!-- Call-out Points -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-zinc-150">
+          <div class="flex items-center space-x-2 text-zinc-700">
+            <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+            <span class="text-sm font-semibold">ICPI Guideline Paving Specs</span>
+          </div>
+          <div class="flex items-center space-x-2 text-zinc-700">
+            <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+            <span class="text-sm font-semibold">Proper Excavation & Slope Grade</span>
+          </div>
+          <div class="flex items-center space-x-2 text-zinc-700">
+            <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+            <span class="text-sm font-semibold">Tough Base Compacting</span>
+          </div>
+          <div class="flex items-center space-x-2 text-zinc-700">
+            <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+            <span class="text-sm font-semibold">Free On-Site Elevation Surveying</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Mission Statement Block (Matches ar2 structure) -->
+<section class="py-16 bg-zinc-50 border-y border-zinc-200 mt-10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+    <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-600 mx-auto border border-brand-500/20">
+      <i class="fa-solid fa-quote-left text-xl"></i>
+    </div>
+    <h3 class="font-display font-bold text-2xl text-zinc-900 leading-tight">Our Mission Statement</h3>
+    <!-- Pristine Styled Block -->
+    <blockquote class="bg-gradient-to-tr from-brand-50 to-emerald-50/50 p-8 sm:p-10 rounded-3xl border border-brand-500/10 max-w-2xl mx-auto shadow-inner">
+      <p class="font-display font-semibold text-lg sm:text-xl text-brand-900 italic leading-relaxed">
+        "We strive to offer premium landscaping and custom paver installations that create a better, more vibrant lifestyle for the outside of our customers' homes—delivering unparalleled, enduring craftsmanship that elevates curb value."
+      </p>
+    </blockquote>
+    <p class="text-xs font-bold text-zinc-400 uppercase tracking-widest flex items-center justify-center space-x-2">
+      <span>SmallScapes LLC Co.</span>
+      <span class="w-1.5 h-1.5 bg-zinc-400 rounded-full"></span>
+      <span>Indiana Pride</span>
+    </p>
+  </div>
+</section>
+
+<!-- Timeline / How We Execute (Our Workflow Process) -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <h2 class="text-xs uppercase font-bold tracking-widest text-brand-600"><i class="fa-solid fa-list-check"></i> Standard Process</h2>
+      <p class="font-display font-black text-3xl text-zinc-900 tracking-tight">How SmallScapes Crafts Your Yard</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <div class="p-6 bg-zinc-50 rounded-2xl border border-zinc-200/50 relative hover:border-brand-500/20 transition-all">
+        <p class="font-display font-bold text-4xl text-brand-100 absolute top-4 right-6 select-none">01</p>
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-600 font-bold mb-4 border border-brand-500/20">I</div>
+        <h4 class="font-bold text-zinc-900 text-base mb-2">Survey & Slope Check</h4>
+        <p class="text-xs text-zinc-500 leading-relaxed">We inspect physical properties, assess drainage vectors, plot elevation lines, and specify precise layouts.</p>
+      </div>
+
+      <div class="p-6 bg-zinc-50 rounded-2xl border border-zinc-200/50 relative hover:border-brand-500/20 transition-all">
+        <p class="font-display font-bold text-4xl text-brand-100 absolute top-4 right-6 select-none">02</p>
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-600 font-bold mb-4 border border-brand-500/20">II</div>
+        <h4 class="font-bold text-zinc-900 text-base mb-2">Subbase Prep</h4>
+        <p class="text-xs text-zinc-500 leading-relaxed">Excavation down to pristine levels, laying heavy geotextile fabric, followed by gravel subbase compaction.</p>
+      </div>
+
+      <div class="p-6 bg-zinc-50 rounded-2xl border border-zinc-200/50 relative hover:border-brand-500/20 transition-all">
+        <p class="font-display font-bold text-4xl text-brand-100 absolute top-4 right-6 select-none">03</p>
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-600 font-bold mb-4 border border-brand-500/20">III</div>
+        <h4 class="font-bold text-zinc-900 text-base mb-2">Paver Placement</h4>
+        <p class="text-xs text-zinc-500 leading-relaxed">Fine sand screeding, placement of brick pavers in your desired pattern, and embedding side constraints.</p>
+      </div>
+
+      <div class="p-6 bg-zinc-50 rounded-2xl border border-zinc-200/50 relative hover:border-brand-500/20 transition-all">
+        <p class="font-display font-bold text-4xl text-brand-100 absolute top-4 right-6 select-none">04</p>
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-600 font-bold mb-4 border border-brand-500/20">IV</div>
+        <h4 class="font-bold text-zinc-900 text-base mb-2">Polymer Locking</h4>
+        <p class="text-xs text-zinc-500 leading-relaxed">Laying high-performance binding joint sand, plate vibrating, and locking everything with specialized sealants.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Direct Call CTA Banner (Matches ar3 structure) -->
+<section class="bg-brand-900 text-white py-16 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-700 to-teal-800 z-10"></div>
+  </div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center space-y-6">
+    <h3 class="font-display font-extrabold text-2xl tracking-tight">Need On-Site Elevation Assessment?</h3>
+    <p class="text-zinc-300 font-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+      Speak directly with a skilled hardscape estimator. We will drive down to coordinate with you and sketch a custom block layout completely free.
+    </p>
+    <div>
+      <a href="tel:+13174507948" class="inline-flex items-center space-x-3 bg-white hover:bg-brand-100 text-brand-900 font-display font-black text-lg py-4 px-10 rounded-full shadow-xl hover:-translate-y-0.5 transition-all duration-300 scale-100 active:scale-95 group">
+        <i class="fa-solid fa-phone-flip text-brand-505 animate-pulse group-hover:rotate-12 transition-transform"></i>
+        <span>CLICK TO CALL NOW (317) 450-7948</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

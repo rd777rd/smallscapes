@@ -1,189 +1,176 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>SmallScapes</title>
-    <meta name="description" content="A brief description" />
-    <meta
-      name="author"
-      content="Based in Indiana, landscaping company"
-    />
+    <title>{% block title %}SmallScapes | Premium Hardscaping & Paver Laying{% endblock %}</title>
+    <meta name="description" content="SmallScapes is Indiana's premier outdoor design and masonry firm. Specializing in luxury brick paver patios, flagstone pathways, seating walls, and creative landscaping." />
+    <meta name="author" content="SmallScapes Landscaping" />
 
-    <!-- Load favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="{% static 'img/favicon.ico' %}"
-    />
-
-    <!-- Include your CSS files here -->
-    <link
-      rel="stylesheet"
-      as="style"
-      type="text/css"
-      href="{% static 'css/style.css' %}"
-      onload="this.rel = 'stylesheet'"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      as="style"
-      href="{% static 'css/responsive.css' %}"
-      onload="this.rel = 'stylesheet'"
-    />
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS Play CDN (Enables flawless UI previewing with no local setup needed for the user) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              display: ['"Space Grotesk"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#f0f9f1',
+                100: '#dcf1df',
+                500: '#15803d', /* Forest emerald */
+                600: '#166534',
+                700: '#14532d',
+                900: '#122c15',
+                accent: '#059669', /* Vibrant emerald */
+              },
+              stone: {
+                950: '#0c0a09',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS File (For custom styled components, native overrides, scrollbars, etc.) -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
   </head>
 
-  <body>
-    <!-- Add include tag -->
-    {% include 'partials/_header.html' %}
-    
+  <body class="bg-slate-50 font-sans text-neutral-800 flex flex-col min-h-screen selection:bg-brand-100 selection:text-brand-700">
+    <!-- Preloader Overlay with Company Logo -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-zinc-950 flex flex-col items-center justify-center transition-all duration-700 ease-in-out select-none">
+      <div class="relative flex flex-col items-center text-center">
+        <!-- Spinner Ring -->
+        <div class="absolute -top-3 w-32 h-32 rounded-full border-2 border-brand-500/10 border-t-brand-500 animate-spin duration-1000"></div>
+        <!-- Logo Image Container with pulse feedback -->
+        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-zinc-900 shadow-2xl scale-100 transition-transform">
+          <img 
+            src="{% static 'img/logo.jpg' %}" 
+            alt="SmallScapes Logo" 
+            class="object-cover w-full h-full animate-pulse"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <!-- Brand Signature -->
+        <div class="mt-8 space-y-1">
+          <h2 class="font-display font-black text-white text-xl sm:text-2xl uppercase tracking-[0.25em] animate-pulse">
+            SmallScapes
+          </h2>
+          <p class="text-[10px] sm:text-xs font-semibold text-brand-400 uppercase tracking-[0.3em] leading-none">
+            Hardscaping & Pavers
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <main>
-       <!-- Begin block content --> 
-        {% block content %}
-        
-        {% endblock %}
- 
-      <!-- End block content --> 
+    <!-- Header -->
+    {% include 'partials/_header.html' %}
+
+    <!-- Main Content Area -->
+    <main class="flex-grow pt-24">
+      {% block content %}
+      <!-- Content injected by templates -->
+      {% endblock %}
     </main>
 
+    <!-- Footer -->
     {% include 'partials/_footer.html' %}
+
+    <!-- Interactive Mobile Navigation Script & Before-After Slider Engine -->
+    <script>
+      // Toggle Mobile Menu Drawer
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+
+      if (mobileMenuBtn && mobileDrawer) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileDrawer.classList.toggle('hidden');
+          const isOpen = !mobileDrawer.classList.contains('hidden');
+          if (isOpen) {
+            mobileMenuIcon.classList.remove('fa-bars');
+            mobileMenuIcon.classList.add('fa-xmark');
+          } else {
+            mobileMenuIcon.classList.remove('fa-xmark');
+            mobileMenuIcon.classList.add('fa-bars');
+          }
+        });
+      }
+
+      // Clear Preloader on complete page layout load
+      window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 800);
+        }
+      });
+
+      // Safe Fallback: clear preloader automatically after 3.5 seconds
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader && !preloader.classList.contains('pointer-events-none')) {
+          preloader.classList.add('opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 800);
+        }
+      }, 3500);
+
+      // Dynamic Interactive Before/After Image Toggle
+      function toggleBeforeAfter(containerId, beforeUrl, afterUrl) {
+        const imgElement = document.getElementById(`toggle-img-${containerId}`);
+        const stateBadge = document.getElementById(`state-badge-${containerId}`);
+        const buttonText = document.getElementById(`btn-text-${containerId}`);
+        
+        if (!imgElement) return;
+
+        // Retrieve current state or default to 'after' since initially showing completed after
+        let currentState = imgElement.getAttribute('data-state');
+        if (!currentState) {
+          currentState = 'after';
+        }
+
+        console.log('[Before/After Toggle]', { containerId, currentState, beforeUrl, afterUrl });
+
+        if (currentState === 'after') {
+          // Switch to BEFORE
+          imgElement.src = beforeUrl;
+          imgElement.setAttribute('data-state', 'before');
+          if (stateBadge) {
+            stateBadge.innerHTML = '<span class="px-3 py-1 bg-amber-600 text-white font-semibold rounded-full text-xs uppercase tracking-wider block shadow-sm"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Construction Before</span>';
+          }
+          if (buttonText) {
+            buttonText.innerHTML = '<i class="fa-solid fa-sparkles mr-1"></i> View Beautiful After';
+          }
+        } else {
+          // Switch to AFTER
+          imgElement.src = afterUrl;
+          imgElement.setAttribute('data-state', 'after');
+          if (stateBadge) {
+            stateBadge.innerHTML = '<span class="px-3 py-1 bg-brand-500 text-white font-semibold rounded-full text-xs uppercase tracking-wider block shadow-sm"><i class="fa-solid fa-circle-check mr-1"></i> Completed After</span>';
+          }
+          if (buttonText) {
+            buttonText.innerHTML = '<i class="fa-solid fa-undo mr-1"></i> View Before Workspace';
+          }
+        }
+      }
+    </script>
   </body>
-  <script>
-    const toggleBtn = document.querySelector('.toggle_btn')
-    const toggleBtnIcon = document.querySelector('.toggle_btn i')
-    const dropDownMenu = document.querySelector('.dropdown-menu')
-    
-    toggleBtn.onclick = function() {
-        dropDownMenu.classList.toggle('open')
-        const isOpen = dropDownMenu.classList.contains('open')
-
-        toggleBtnIcon.classList= isOpen
-        ?'fa-solid fa-x'
-        :'fa-solid fa-bars'
-    }
-    var x = 0;
-    const toggleimage1 = document.getElementById('img1')
-    toggleimage1.onclick = function changImage1(){
-      if(x==0){
-        toggleimage1.src="{% static 'img/img1a.JPG' %}";
-        x=1
-      }
-      else{
-        toggleimage1.src="{% static 'img/img1.JPG' %}";
-        x=0
-      }
-    }
-      var x = 0;
-    const toggleimage2 = document.getElementById('img2')
-    toggleimage2.onclick = function changImage2(){
-      if(x==0){
-        toggleimage2.src="{% static 'img/img2a.PNG' %}";
-        x=1
-      }
-      else{
-        toggleimage2.src="{% static 'img/img2.JPG' %}";
-        x=0
-      }
-        
-    }
-    var x = 0;
-    const toggleimage3 = document.getElementById('img3')
-    toggleimage3.onclick = function changImage3(){
-      if(x==0){
-        toggleimage3.src="{% static 'img/img3a.JPG' %}";
-        x=1
-      }
-      else{
-        toggleimage3.src="{% static 'img/img3.JPG' %}";
-        x=0
-      }
-        
-    }
-    var x = 0;
-    const toggleimage4 = document.getElementById('img4')
-    toggleimage4.onclick = function changImage4(){
-      if(x==0){
-        toggleimage4.src="{% static 'img/img4a.JPG' %}";
-        x=1
-      }
-      else{
-        toggleimage4.src="{% static 'img/img4.JPG' %}";
-        x=0
-      }
-        
-    }
-    var x = 0;
-    const toggleimage5 = document.getElementById('img5')
-    toggleimage5.onclick = function changImage5(){
-      if(x==0){
-
-        toggleimage5.src="{% static 'img/img5a.JPEG' %}";
-
-        toggleimage5.src="{% static 'img/img5a.JPEG' %}";
-
-        x=1
-      }
-      else{
-        toggleimage5.src="{% static 'img/img5.PNG' %}";
-        x=0
-      }
-        
-    }
-    var x = 0;
-    const toggleimage6 = document.getElementById('img6')
-    toggleimage6.onclick = function changImage6(){
-      if(x==0){
-        toggleimage6.src="{% static 'img/img6a.JPG' %}";
-        x=1
-      }
-      else{
-        toggleimage6.src="{% static 'img/img6.JPG' %}";
-        x=0
-      }
-        
-    }
-    var x = 0;
-    const toggleimage7 = document.getElementById('img7')
-    toggleimage7.onclick = function changImage7(){
-      if(x==0){
-        toggleimage7.src="{% static 'img/img7a.JPG' %}";
-        x=1
-      }
-      else{
-        toggleimage7.src="{% static 'img/img7.JPG' %}";
-        x=0
-      }
-        
-    }
-    var x = 0;
-    const toggleimage8 = document.getElementById('img8')
-    toggleimage8.onclick = function changImage8(){
-      if(x==0){
-        toggleimage8.src="{% static 'img/img8a.JPG' %}";
-        x=1
-      }
-      else{
-        toggleimage8.src="{% static 'img/img8.JPG' %}";
-        x=0
-      }
-        
-    }
-    
-</script>
 </html>

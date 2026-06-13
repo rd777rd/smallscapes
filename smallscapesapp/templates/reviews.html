@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Client Reviews | SmallScapes Landscaping Testimonials{% endblock %}
+
+{% block content %}
+<!-- Page Title Frame -->
+<section class="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 text-white py-16 sm:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 z-0">
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-brand-500 rounded-full blur-[100px]"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+    <span class="text-xs uppercase font-bold tracking-widest text-brand-400"><i class="fa-solid fa-stars"></i> Client Feedback</span>
+    <h1 class="font-display font-black text-4xl sm:text-5xl leading-tight">Reviews</h1>
+    <p class="text-zinc-400 font-light max-w-xl mx-auto text-sm sm:text-base">
+      Read actual feedback from homeowners in Indianapolis, Carmel, and Bloomington who trusted SmallScapes with their hardscapes.
+    </p>
+  </div>
+</section>
+
+<!-- Feedback Content Section -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Overall Scorecard Header (Presents highly professional brand authority) -->
+    <div class="bg-white border border-zinc-200 p-8 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between shadow-sm mb-12 gap-6">
+      <div class="flex items-center space-x-4">
+        <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center text-2xl border border-amber-500/20">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <div class="text-left">
+          <div class="flex items-center space-x-1 text-amber-500">
+            <i class="fa-solid fa-star text-sm"></i>
+            <i class="fa-solid fa-star text-sm"></i>
+            <i class="fa-solid fa-star text-sm"></i>
+            <i class="fa-solid fa-star text-sm"></i>
+            <i class="fa-solid fa-star text-sm"></i>
+            <span class="text-zinc-900 font-display font-black text-lg ml-2">4.9 / 5.0</span>
+          </div>
+          <p class="text-xs text-zinc-500 font-semibold mt-0.5">Overall rating based on verified local project reviews</p>
+        </div>
+      </div>
+      <div>
+        <a href="{% url 'leave_review' %}" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-sm px-6 py-3 rounded-full shadow-md shadow-brand-600/10 hover:shadow-brand-600/20 active:translate-y-0 hover:-translate-y-0.5 transition-all">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span>Share Your Feedback</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Review Grid Stack (Matches structure of reviewDetails but elegantly masonry-styled) -->
+    <div class="space-y-6">
+      {% if reviews %}
+        <div class="grid grid-cols-1 gap-6">
+          {% for review in reviews %}
+            <div class="bg-white border border-zinc-200/80 p-6 sm:p-8 rounded-3xl shadow-sm hover:border-zinc-300 transition-all flex flex-col justify-between relative group">
+              <!-- Quote Icon decor -->
+              <i class="fa-solid fa-quote-right text-zinc-100 text-6xl absolute top-6 right-8 pointer-events-none group-hover:text-zinc-200/50 transition-colors"></i>
+              
+              <div class="space-y-4 relative z-10">
+                <!-- Stars and Date info -->
+                <div class="flex items-center justify-between">
+                  <!-- Dynamic Star Rendering (Nunjucks/Django friendly representation of stars) -->
+                  <div class="flex items-center text-amber-400 space-x-1 text-sm bg-zinc-50 border border-zinc-100 rounded-full py-1 px-3">
+                    <!-- Elegant visual representation -->
+                    <span class="font-display font-black text-xs text-amber-600 mr-1.5">{{ review.rating }}/5</span>
+                    <i class="fa-solid fa-star text-xs"></i>
+                  </div>
+                  <span class="text-xs text-zinc-400"><i class="fa-solid fa-circle-check text-brand-500 mr-1"></i> Verified Local Project</span>
+                </div>
+
+                <!-- Testimonial Comment -->
+                <p class="text-zinc-700 leading-relaxed text-sm sm:text-base font-light italic">
+                  "{{ review.comment }}"
+                </p>
+              </div>
+
+              <!-- Customer profile line -->
+              <div class="pt-6 border-t border-zinc-100 flex items-center justify-between mt-6 relative z-10">
+                <div class="flex items-center space-x-3.5">
+                  <div class="w-11 h-11 bg-brand-50 border border-brand-200 rounded-full flex items-center justify-center font-display font-black text-sm text-brand-700">
+                    <!-- Get initials -->
+                    {{ review.name|slice:":2"|upper }}
+                  </div>
+                  <div class="text-left">
+                    <p class="font-display font-bold text-sm text-zinc-900 leading-tight">{{ review.name }}</p>
+                    <p class="text-[10px] uppercase font-bold tracking-widest text-zinc-400 mt-0.5">Central Indiana Client</p>
+                  </div>
+                </div>
+                
+                <!-- If they are a staff user, they can hit delete -->
+                {% if user.is_authenticated and user.is_staff and review.id %}
+                  <a href="{% url 'delete_review' review.id %}" class="inline-flex items-center space-x-1 text-xs text-zinc-400 hover:text-rose-600 hover:bg-rose-50 px-2.5 py-1.5 rounded-lg transition-all" title="Remove Review">
+                    <i class="fa-solid fa-trash-can text-[10px]"></i>
+                    <span>Delete</span>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <!-- Empty feedback state -->
+        <div class="bg-white border border-dashed border-zinc-300 p-16 rounded-[2.5rem] text-center space-y-4">
+          <div class="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center text-zinc-400 text-xl mx-auto"><i class="fa-solid fa-quote-left"></i></div>
+          <h3 class="font-display font-bold text-zinc-900 text-lg">No Reviews Left Yet</h3>
+          <p class="text-zinc-500 text-sm max-w-sm mx-auto">Be the very first native client to submit an elegant review of our custom pavers and paving block structures!</p>
+          <div class="pt-2">
+            <a href="{% url 'leave_review' %}" class="inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-sm px-6 py-3 rounded-full transition-all">
+              <i class="fa-solid fa-plus mr-1"></i> Submit First Review
+            </a>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Page Bottom CTA Link (Matches original's reviewLinkContainer / reviewLink) -->
+    <div class="text-center pt-16">
+      <div class="inline-flex flex-col items-center space-y-4">
+        <p class="text-xs font-bold text-zinc-450 uppercase tracking-widest">Share Your Experience with SmallScapes</p>
+        <a href="{% url 'leave_review' %}" class="inline-flex items-center space-x-3 bg-brand-900 hover:bg-brand-700 text-white font-display font-black text-xl py-4 px-10 rounded-full shadow-lg hover:-translate-y-0.5 transition-all scale-100 active:scale-95 group">
+          <i class="fa-solid fa-pen-ruler animate-pulse group-hover:rotate-12 transition-transform"></i>
+          <span>CLICK HERE TO LEAVE A REVIEW</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

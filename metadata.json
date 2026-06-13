@@ -1,0 +1,6 @@
+{
+  "name": "SmallScapes Landscaping",
+  "description": "A high-end, responsive, and modern web application showcase for SmallScapes, a premium paver laying and landscaping company based in Indiana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

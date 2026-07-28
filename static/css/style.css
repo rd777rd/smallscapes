@@ -1,0 +1,89 @@
+/* 
+ * SmallScapes Premium Hardscapes & Landscape Architecture
+ * Custom Style Sheet Overrides & Animating Micro-States
+ */
+
+/* Custom Smooth Scrollbar with Emerald Accent Trails */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* Slate 900 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #15803d; /* Forest Emerald Accent */
+  border-radius: 8px;
+  border: 2px solid #0f172a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669; /* Bright Emerald hover */
+}
+
+/* Base resets & typography optimization */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Classy heading pairings */
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom interactive pulse glow keyframes */
+@keyframes soft-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(21, 128, 61, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(21, 128, 61, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: soft-glow 3s infinite ease-in-out;
+}
+
+/* Perfecting backdrop glass layouts (Safe support for older browsers) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark-glass-panel {
+  background: rgba(12, 10, 9, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Beautiful custom border hover lines */
+.hover-border-slide {
+  position: relative;
+}
+
+.hover-border-slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #15803d;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-border-slide:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

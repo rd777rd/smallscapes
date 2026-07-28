@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /reviews/delete/
+Disallow: /reviews/approve/
+
+Sitemap: https://smallscapes.onrender.com/sitemap.xml
